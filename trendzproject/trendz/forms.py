@@ -45,25 +45,3 @@ class EditProfileForm(UserChangeForm):
 			'email',
 			'password'
 			)
-'''
-class MYPCF(PasswordChangeForm):
-
-	class Meta:
-		model = User
-
-		fields = (
-			'old_password',
-			'new_password1',
-			'new_password1'
-			)
-
-	def save(self, commit=True):
-		user = super(MYPCF, self).save(commit=False)
-		user.old_password=self.cleaned_data['old_password']
-		user.new_password1=self.cleaned_data['new_password1']
-		user.new_password2 = self.cleaned_data['new_password2']
-
-		if commit:
-			user.save()
-
-		return user'''

@@ -72,19 +72,23 @@
 
 
     <div class="jumbotron">
-        <marquee>
+        <marquee >
     	<p>"If you don't find a way to make money while you sleep,You will work till you die"-Warren Buffet</p>
         </marquee>
     </div> 
 
 
-	    <div class="container">
 
-	    <p>{{ username }}</p>
-	    <img src="#">
-	    <p>like</p>
-	    <p>comment</p>
-	    </div>  
+
+	<div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }} 
+            <button>Submit</button>
+        </form>
+	</div>  
+
+    <p>{{ text }}</p>
 
     <div class="footer">
     <a href="#" class="active">TRENDING</a>
