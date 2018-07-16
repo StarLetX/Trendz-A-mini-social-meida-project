@@ -1,5 +1,17 @@
 from django import forms
+from home.models import Post
 
+class HomeForm(forms.ModelForm):
+	post = forms.CharField(widget=forms.TextInput(
+		attrs={
 
-class HomeForm(forms.Form):
-	post = forms.CharField()
+			'class':'form-control',
+			'placeholder':'Add your Trend...'
+
+		}
+		))
+
+	class Meta:
+		model = Post
+		fields = ('post',)
+

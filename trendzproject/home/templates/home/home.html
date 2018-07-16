@@ -78,17 +78,22 @@
     </div> 
 
 
-
-
 	<div class="container">
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }} 
-            <button>Submit</button>
+            {{ form.post }}  
+            <br>
+            <button>Add Trend</button>
         </form>
 	</div>  
 
-    <p>{{ text }}</p>
+    <div class="container">
+        {% for post in posts %}
+            <p><b>{{ post.post }}</b></p>
+             <p>{{ post.user }} || {{ post.created_date }} </p>
+            <br/>
+        {% endfor %}
+    </div>
 
     <div class="footer">
     <a href="#" class="active">TRENDING</a>
@@ -96,5 +101,3 @@
     <a href="{% url 'trendz:view_profile' %}">ME</a>    
 		
 {% endblock %}
-	
-
