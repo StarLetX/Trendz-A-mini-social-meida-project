@@ -4,18 +4,76 @@
 <title>PROFILE</title>
 {% endblock %}
 
-{% block body %}
 
-		<div class="jumbotron">
-			<h1>WELCOME TO THE NEWS CHANNEL OF TRENDZ</h1>
-			
-		</div>
-{% endblock %}
 
 {% block float %}
-<p><br></p>
-{% endblock %}
-	
-</body>
-</html>
+{% endblock %}	
 
+		
+{% block body %}
+	<title>TRENDZ</title>
+	<style>
+		
+		.footer{
+			background-color: lightskyblue;
+			overflow: hidden;
+			position: fixed;
+			bottom:0;
+			width: 100%;
+		}
+
+		.footer a{
+			float:left;
+			display: block;
+			text-align: center;
+			color: white;
+			text-decoration: none;
+			padding: 10px 16px;
+        }
+        .footer a:active{
+        	background-color: dodgerblue;
+        }
+
+        .footer a.active{
+        	background-color: dodgerblue;
+        }
+        .menu{
+        	width:20px;
+        	height: 4px;
+        	background-color: black;
+        	margin:2px 0;
+        }
+
+        .header{
+        	/*float: left;
+        	display: block;*/
+        	background-color: dodgerblue;
+        	padding: 10px;
+        }
+
+
+        .slider{
+        	border: 1px dodgerblue;
+        	position: relative;
+        	
+        }
+        .name{
+        	color:white;
+        }
+	</style>
+</head>
+<body>
+<div class="jumbotron">
+	<h1>WELCOME TO THE NEWS CHANNEL OF TRENDZ</h1>
+	<p>This is a place that TeamTrendz will be giving latest news about what is happening in town</p>
+	<p><b><i>It will be available in later updates of Trendz</i></b></p>
+</div>
+
+
+	
+<div class="footer">
+<a href="{% url 'home:HomeView' %}">TRENDING</a>
+<a href="{% url 'trendz:news' %}" class="active">NEWS</a>
+<a href="{% url 'trendz:view_profile' %}">ME</a>    
+		
+{% endblock %}

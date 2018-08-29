@@ -9,7 +9,7 @@ from django.contrib.auth.forms import (
 
 
 class RegistrationForm(UserCreationForm):
-	Number = forms.IntegerField(required=True)
+	Number = forms.IntegerField(required=False)
 
 	class Meta:
 		model = User

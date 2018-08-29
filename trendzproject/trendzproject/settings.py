@@ -126,7 +126,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'trendzproject/media')
 
 
-LOGIN_REDIRECT_URL = '/trendz/'
+LOGIN_REDIRECT_URL = '/home/'
 LOGIN_URL = '/trendz/login'
 
 LOGIN_EXEMPT_URLS = (
