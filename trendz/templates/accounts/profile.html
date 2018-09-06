@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>PROFILE</title>
+{% endblock %}
+
+
+{% block body %}
+	<p style="background-color:dodgerblue; color: white; text-align:center; ">
+		<a href="/trendz/" style="text-decoration: none; color: white;">𐌉 TRENDZ 𐌉</a> 
+
+		<a href="{% url 'trendz:edit_profile' %}" style="text-decoration: none; color: white;"> Edit Profile 𐌉</a> 
+
+		<a href="{% url 'trendz:change_password' %}" style="text-decoration: none; color: white;"> Change Password 𐌉</a>
+
+
+		<div class="container">
+			<!--
+			{% if user.is_authenticated != True %}
+			<button style="float: right;" class="btn btn-primary" type="submit">Chat</button>
+			{% else %}-->
+			<h1>Profile</h1>
+			<img src="{{ user.userprofile.image.url }}" width='240'>
+			<p>{{ user.first_name }} {{ user.last_name }}</p>
+			<p>Area: {{ user.userprofile.Area }}</p>
+			<p>Email: {{ user.email }}</p>
+			<p>Number: {{ user.userprofile.Number }}</p>
+			<p>Whatsapp Number: {{ user.userprofile.Whatsapp }}</p>
+			<p>Facebook: {{ user.userprofile.Facebook }}</p>			
+			<p>About me: {{ user.userprofile.Bio }}</p>
+			
+
+		    <!--{% endif %}-->
+
+			<a href="{% url 'trendz:logout' %}"><button class="btn btn-primary" type="submit">LOG OUT</button></a>
+		</div>
+
+		
+{% endblock %}
+
+{% block float %}
+{% endblock %}
+	

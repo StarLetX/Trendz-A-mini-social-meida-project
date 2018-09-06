@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>LOG IN</title>
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+
+		<div class="jumbotron">
+		<h1>KENKEN</h1>
+		</div>
+
+		<form method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button class="btn btn-info" type="submit">LOG IN</button> 
+		</form>
+		or <a href="{% url 'trendz:register' %}"><button class="btn btn-info" type="submit">REGISTER</button></a>
+		<p>	<a href="{% url 'trendz:password_reset' %}" style="text-decoration: none; color: white;">Reset Password</a> </p>	
+
+	</div>
+{% endblock %}
+
+{% block float %}
+{% endblock %}
+	
+</body>
+</html>
