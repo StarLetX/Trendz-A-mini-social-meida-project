@@ -1,4 +1,4 @@
 from django.shortcuts import redirect
 
 def login_redirect(request):
-	return redirect("/trendz/login")
+	return redirect("trendz/login")

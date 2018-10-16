@@ -125,8 +125,12 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'trendzproject/media')
 
-
+''' if you create a login form with the inbuilt login function,
+any time you log in, you are redirected to localhost:8000/account/profile
+to change this, we set the url we want to be redirected to in the settings.py
+using the LOGIN_REDIRECT_URL variable. An example is the below.'''
 LOGIN_REDIRECT_URL = '/home/'
+
 LOGIN_URL = '/trendz/login'
 
 LOGIN_EXEMPT_URLS = (

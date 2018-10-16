@@ -12,8 +12,7 @@ from django.contrib.auth.views import (
 
 
 urlpatterns = [
-	url(r'^$', views.home),
-	url(r'^login$', login, {'template_name':'first page/login.html'}, name = 'login'),
+	url(r'^login$', login, {'template_name':'firstPage/login.html'}, name = 'login'),
 	url(r'^logout$', logout, {'template_name':'last page/logout.html'}, name = 'logout'),
 	url(r'^register/$', views.register, name='register'),
 	url(r'^profile/$', views.view_profile, name='view_profile'),

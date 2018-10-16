@@ -1,17 +1,11 @@
-
-
 from django.shortcuts import render, redirect
-from trendz.forms import RegistrationForm
+
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm,UserCreationForm
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 
-from trendz.forms import EditProfileForm
-
-
-def home(request):
-	return render(request, "home/home.html") 
+from trendz.forms import EditProfileForm, RegistrationForm
 
 
 def news(request):
@@ -22,15 +16,15 @@ def register(request):
 		form = RegistrationForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect("/home")
+			return redirect("home:HomeView")
 	else:
 		form = RegistrationForm()
 		args = {'form':form}
-		return render(request, 'first page/register.html', args)
+		return render(request, 'firstPage/register.html', args)
 
 
 def view_profile(request):
-	args = {'user':request.user}
+	args = { 'user':request.user }
 	return render(request, "accounts/profile.html", args)
 
 
@@ -40,7 +34,7 @@ def edit_profile(request):
 		if form.is_valid():
 			form.save()
 
-			return redirect("/trendz/profile/")
+			return redirect("trendz:view_profile")
 	else:
 		form = EditProfileForm(instance=request.user)
 
@@ -56,7 +50,7 @@ def change_password(request):
 			form.save()
 			update_session_auth_hash(request, form.user)
 
-			return redirect("/trendz/profile/")
+			return redirect("trendz:view_profile")
 
 	else:
 		form = PasswordChangeForm(user=request.user)

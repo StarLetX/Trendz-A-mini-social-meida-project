@@ -4,7 +4,6 @@ from home.forms import HomeForm
 from home.models import Post
 
 
-
 class HomeView(TemplateView):
 	template_name = 'home/home.html'
 
@@ -26,6 +25,6 @@ class HomeView(TemplateView):
 			form = HomeForm()
 			return redirect('home:HomeView')
 
-		args = {'form': form, 'text': text }
+		args = { 'form': form, 'text': text }
 		return render(request, self.template_name, args)
 

@@ -4,6 +4,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		{% block head %}
 		<title>BASE</title>
+		{% load static %}
+		
 		{% endblock %}
 		<style type="text/css">
 			.float{
@@ -14,23 +16,17 @@
 	
 	</head>
 	<body>
-<!--
-		<nav class="navbar navbar-light bg-primary justify-content-between">
-	  		<a class="navbar-brand">Trendz</a>
-
-	  		<form class="form-inline">
-	   			 <input class="form-control mr-xs-2" type="search" placeholder="Search" aria-label="Search">
-	    		 <button class="btn btn-info my-2 my-xs-0" type="submit">Search</button>
-	  		</form>
-		</nav>
--->
-
-	
+		{% block css %}
+		<link rel="stylesheet" href="{% static 'firstPage/login.css' %}" type="text/css">
+		<link rel="stylesheet" href="{% static 'home/home.css' %}" type="text/css">
+		<link rel="stylesheet" href="{% static 'home/news.css' %}" type="text/css">
+		<link rel="stylesheet" href="{% static 'home/footer.css' %}" type="text/css">
+		{% endblock %}
 
 
 		{% block float %}
 		<div class="jumbotron">
-			<a href="/trendz/">TRENDZ</a>
+			<a href="{% url 'home:HomeView' %}">TRENDZ</a>
 			<div class="float" >
 			<a href="{% url 'trendz:password_reset' %}" >   RESET PASSWORD  ||</a>
 			<a href="{% url 'trendz:register' %}">REGISTER</a>
@@ -40,6 +36,17 @@
 
 		{% block body %}
 		{% endblock %}
+
+
+	{% block footer %}	
+	{% if user.is_authenticated %}
+    <div class="footer">
+    <a href="{% url 'home:HomeView' %}"> TRENDING </a>
+    <a href="{% url 'trendz:news' %}"> NEWS </a>
+    <a href="{% url 'trendz:view_profile' %}"> ME </a> 
+    </div> 
+    {% endif %}
+    {% endblock %}
 
 		
 	</body>
