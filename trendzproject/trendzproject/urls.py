@@ -8,7 +8,7 @@ from trendzproject import views
 
 
 urlpatterns = [
-	url(r'^$', views.login_redirect, name="login_redirect"),
+	url(r'^$', views.main_home, name="main_home"),
     url(r'^admin/', admin.site.urls),
     url(r'^trendz/', include('trendz.urls', namespace='trendz')),
     url(r'^home/', include('home.urls', namespace='home')),

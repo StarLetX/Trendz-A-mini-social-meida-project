@@ -2,55 +2,40 @@
 
 {% block head %}
 <title>PROFILE</title>
-<style>
-	.header , a{
-		background-color:dodgerblue; 
-		color: white; 
-		text-align: center;
-		text-decoration: none;
-	}
-</style>
+
 {% endblock %}
 
+{% block bootstrap_header %}
+			<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+	      		<h5 class="my-0 mr-md-auto font-weight-normal"><a class="click_to_main_home" href="{% url 'main_home' %}">TRENDZ</a></h5>
+	      		<nav class="my-2 my-md-0 mr-md-3">
+			        <a class="p-2 text-dark profile_links" href="{% url 'trendz:edit_profile' %}" >Edit Profile</a>
+			        <a class="p-2 text-dark profile_links" href="{% url 'trendz:change_password' %}" >Change Password</a>
+	      		</nav>
+	      		<a class="btn btn-outline-primary profile_links" href="{% url 'trendz:logout' %}" class="profile_links">Log Out</a>
+	    	</div>
+		{% endblock %}
 
 {% block body %}
+
 <div class="container">
-	<div class="row  header">
+		<p class="profile_text"> profile </p>
+		<img class="user_profile_image" src="{{ user.userprofile.profile_image.url }}" >
+		<p class="full_name">{{ user.first_name | upper}}  {{ user.last_name | upper }}</p>
 
-		<div class="col">
-			<a href="{% url 'home:HomeView' %}"> TRENDZ </a>
+		<div class="user_info">
+			<p class="username_in_profile"> {{ user.userprofile.user | upper }} </p>
+			<p>Location: <span class="muted"> {{ user.userprofile.area }} </span> </p>
+			<p>Number: <span class="muted"> {{ user.userprofile.number }} </span> </p>
+			<p>Email: <span class="muted"> {{ user.userprofile.email }} </span> </p>
+			<br/>
+			<p>About me: <span class="muted"> {{ user.userprofile.bio }} </span> </p>
+
 		</div>
-
-		<div class="col">
-			<a href="{% url 'trendz:edit_profile' %}"> EP </a>
-		</div>
-
-		<div class="col">
-			<a href="{% url 'trendz:change_password' %}"> CP </a>
-		</div>
-
-		<div class="col">
-			<a href="{% url 'trendz:logout' %}"> LT </a>
-		</div>
-
-	</div>
-
-	<div class="user_info">
-
-		<h1>Profile</h1>
-		<!--<img src="{{ user.userprofile.image.url }}" width='240'>-->
-		<p>{{ user.first_name }} {{ user.last_name }}</p>
-		<p>Area: {{ user.area }}</p>
-		<p>Number: {{ user.number }}</p>			
-		<p>About me: {{ user.bio }}</p>
-
-	</div>
-
-	
+		<br/>
 </div>
-		
+
 {% endblock %}
 
 {% block float %}
 {% endblock %}
-	

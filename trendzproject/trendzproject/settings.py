@@ -134,6 +134,7 @@ LOGIN_REDIRECT_URL = '/home/'
 LOGIN_URL = '/trendz/login'
 
 LOGIN_EXEMPT_URLS = (
+        r'^$',
         r'^trendz/logout$',
         r'^trendz/register/$',
         r'^trendz/reset-password/$', 

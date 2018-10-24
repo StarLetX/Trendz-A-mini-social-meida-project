@@ -8,15 +8,14 @@ from django.contrib.auth.decorators import login_required
 from trendz.forms import EditProfileForm, RegistrationForm
 
 
-def news(request):
-	return render(request, "home/news.html") 
-
 def register(request):
 	if request.method == 'POST':
 		form = RegistrationForm(request.POST)
 		if form.is_valid():
 			form.save()
 			return redirect("home:HomeView")
+		else:
+			return redirect("trendz:register")
 	else:
 		form = RegistrationForm()
 		args = {'form':form}
@@ -57,4 +56,3 @@ def change_password(request):
 		args = {'form': form}
 
 		return render(request, 'accounts/edit_profile.html', args)
-

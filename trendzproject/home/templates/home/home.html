@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 
-
 {% block head %}
 	<title>HOME</title>
 {% endblock %}
@@ -10,30 +9,25 @@
 {% endblock %}
 
 
-
-		
 {% block body %}
-<div class="header">
-    <h3 id="name">TRENDZ</h3>
-</div>
 
 <div class="container">
      <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}  
+        {{ form.as_p }}
         <br/>
         <button class="add_trend"> Add Trend </button>
     </form>
-</div>  
+</div>
 
 <div class="container">
     {% for post in posts %}
         <div class="post_model">
-        <p><b>{{ post.post }}</b></p>
-        <p>{{ post.user }} || {{ post.created_date }} </p>
-        <br/>
+        <p>{{ post.post }}</p>
+        <p class="user_username"><img class="post_user_profile_image" src="{{ user.userprofile.profile_image.url }}" >{{ post.user }} </p>
+				<p class= "post_created_date" > {{ post.created_date }} </p>
         </div>
     {% endfor %}
-</div>  
-		
+</div>
+
 {% endblock %}

@@ -1,0 +1,112 @@
+/*
+==================================================================================================
+==================================================================================================
+styles all pages of the trendz site
+==================================================================================================
+==================================================================================================
+*/
+body{
+	background:#eae1cc;
+	font-family: 'Hind', sans-serif;
+}
+
+
+
+/*
+==================================================================================================
+==================================================================================================
+these rules applies to the main_home.html page
+==================================================================================================
+==================================================================================================
+*/
+.header , a{
+		color: white;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	a[class="click_to_main_home"], .profile_text {
+		text-decoration: none;
+		font-family: 'Roboto Condensed', sans-serif;
+		color: #fb5b11;
+		font-weight: bold;
+	}
+
+
+	a[class~="profile_links"] {
+		font-family: 'Roboto Condensed', sans-serif;
+		color: #fb5b11;
+	}
+
+	/*
+	==================================================================================================
+	==================================================================================================
+	 these rules apply to the home.html file
+	 ==================================================================================================
+	 ==================================================================================================
+	*/
+	.user_username {
+		color: #fb5b11;
+		padding: 0;
+		margin:0;
+		font-weight: bold;
+	}
+
+	.post_created_date {
+		color: grey;
+		font-size: 12px;
+		padding: 0;
+		margin:0;
+	}
+
+	.post_user_profile_image {
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		margin:10px;
+	}
+
+
+	/*
+	==================================================================================================
+	==================================================================================================
+	 these rules apply to the profile.html file
+	 ==================================================================================================
+	 ==================================================================================================
+	*/
+	.user_profile_image {
+		border-radius: 50%;
+		border: 10px solid #fb5b11;
+		text-align: center;
+		width: 200px;
+		height: 200px;
+	}
+
+	.user_info {
+		background: white;
+		color: black;
+		border-top: 20px solid #fb5b11;
+		padding: 10px;
+		box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+	}
+
+.muted {
+		color: grey;
+	}
+
+	ul {
+		display:none;
+	}
+
+	.full_name, .username_in_profile {
+		font-family: 'Roboto Condensed', sans-serif;
+		color: #fb5b11;
+		text-align: center;
+	}
+
+	.username_in_profile {
+		font-family: 'Roboto Condensed', sans-serif;
+		color: #fb5b11;
+		text-align: center;
+		border-bottom: 3px solid #fb5b11;
+	}

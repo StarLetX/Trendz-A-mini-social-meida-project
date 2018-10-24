@@ -1,24 +1,22 @@
 {% extends 'base.html' %}
 
-{% block head %}
+{% block header %}
 <title>PROFILE</title>
-<h1 style="background-color:lightskyblue; color: white;">Hi, {{ user.first_name }} {{ user.last_name }}</h1>
-<p>Edit your profile account here</p>
 {% endblock %}
 
 {% block body %}
 	<div class="container">
-		<form method="post">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button class="btn btn-info" type="submit">Submit</button>
-		</form>
+		<div class="user_info">
+				<h1>Hi, {{ user.first_name | upper}}  {{ user.last_name | upper }}</h1>
+				<p>Edit your profile account here.</p>
+				<form method="post">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<button class="btn btn-info" type="submit">Submit</button>
+				</form>
+			</div>
 	</div>
 {% endblock %}
 
 {% block float %}
-<p><br></p>
 {% endblock %}
-	
-</body>
-</html>

@@ -10,16 +10,16 @@
 	<div class="container">
 
 		<div class="jumbotron">
-		<h1>KENKEN</h1>
+				<h1>KENKEN</h1>
 		</div>
-
-		<form method="post">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button class="btn btn-info" type="submit">LOG IN</button> 
-		</form>
-		<p>or</p> 
-		<a href="{% url 'trendz:register' %}"><button class="btn btn-info" type="submit">REGISTER</button></a>
+				<div class="user_info">
+						<form method="post">
+							{% csrf_token %}
+							{{ form.as_p }}
+							<button class="btn btn-info" type="submit">LOG IN</button>
+						</form>
+						<p>Don't have an account? <a href="{% url 'trendz:register' %}"><button class="btn btn-info" type="submit">REGISTER</button></a></p>
+				</div>
 
 	</div>
 {% endblock %}
@@ -28,6 +28,6 @@
 
 {% block float %}
 {% endblock %}
-	
+
 </body>
 </html>

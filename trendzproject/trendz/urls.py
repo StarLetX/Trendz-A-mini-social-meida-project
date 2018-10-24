@@ -29,10 +29,8 @@ urlpatterns = [
 	url(r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
 	password_reset_confirm, {'template_name':'accounts/password_reset_confirm.html', 'post_reset_redirect':'trendz:password_reset_complete'}, name='password_reset_confirm'),
 
-	url(r'^reset-password/complete/$', password_reset_complete, 
-		{'template_name':'accounts/reset_password_complete.html'}, 
+	url(r'^reset-password/complete/$', password_reset_complete,
+		{'template_name':'accounts/reset_password_complete.html'},
 		name='password_reset_complete'),
-	
-	url(r'^news/$', views.news, name='news'),
 
 ]

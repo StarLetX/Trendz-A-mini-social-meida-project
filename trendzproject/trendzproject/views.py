@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import render
 
-def login_redirect(request):
-	return redirect("trendz/login")
+def main_home(request):
+	return render(request, "home/main_home.html")
