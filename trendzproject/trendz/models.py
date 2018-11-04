@@ -17,11 +17,11 @@ class UserProfile(models.Model):
 	bio 		  = models.TextField(default="")
 	number 		  = models.IntegerField(default=0)
 	area 		  = models.CharField(max_length=100, default="Garu/Natinga")
-	profile_image = models.ImageField(upload_to='profile_image', blank=True)
+	profile_image = models.ImageField(upload_to='profile_image', blank=True, null=True)
 	email 		  = models.EmailField(default="")
 
 def create_profile(sender, **kwargs):
-	if kwargs["created"]: 
+	if kwargs["created"]:
 		user_profile = UserProfile.objects.create(user=kwargs["instance"])
 
 post_save.connect(create_profile, sender=User)
@@ -38,5 +38,5 @@ def create_profile(sender, **kwargs):
 post_save.connect(create_profile, sender=User)	'''
 
 
-#**kwargs is a dictionary that stores the user values/fields 
+#**kwargs is a dictionary that stores the user values/fields
 	#such as instance and methods such as created
