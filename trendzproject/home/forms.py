@@ -1,7 +1,7 @@
 from django import forms
 from home.models import Post
 
-class HomeForm(forms.ModelForm):
+class create_post_form(forms.ModelForm):
 	post = forms.CharField(widget=forms.TextInput(
 		attrs={
 
@@ -16,5 +16,5 @@ class HomeForm(forms.ModelForm):
 
 		fields = (
 			'post',
+			'post_image'
 			)
-

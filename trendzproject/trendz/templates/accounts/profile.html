@@ -25,9 +25,9 @@
 
 		<div class="user_info">
 			<p class="username_in_profile"> {{ user.userprofile.user | upper }} </p>
-			<p>Location: <span class="muted"> {{ user.userprofile.area }} </span> </p>
+			<p>Location: <span class="muted"> {{ user.userprofile.location }} </span> </p>
 			<p>Number: <span class="muted"> {{ user.userprofile.number }} </span> </p>
-			<p>Email: <span class="muted"> {{ user.userprofile.email }} </span> </p>
+			<p>Email: <span class="muted"> {{ user.email }} </span> </p>
 			<br/>
 			<p>About me: <span class="muted"> {{ user.userprofile.bio }} </span> </p>
 

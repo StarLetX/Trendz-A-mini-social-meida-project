@@ -16,7 +16,10 @@
 			<div class="user_info">
 					<form method="post">
 						{% csrf_token %}
-						{{ form.as_p }}
+						{% for field in form %}
+							<p> {{ field.label_tag }}</p>
+							<p>	{{ field }} </p>
+						{% endfor %}
 						<button class="btn btn-success" type="submit">REGISTER</button>
 					</form>
 				</div>

@@ -11,23 +11,24 @@
 
 {% block body %}
 
-<div class="container">
-     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <br/>
-        <button class="add_trend"> Add Trend </button>
-    </form>
-</div>
-
-<div class="container">
+<div class="posts">
     {% for post in posts %}
         <div class="post_model">
-        <p>{{ post.post }}</p>
-        <p class="user_username"><img class="post_user_profile_image" src="{{ user.userprofile.profile_image.url }}" >{{ post.user }} </p>
-				<p class= "post_created_date" > {{ post.created_date }} </p>
+					<img src="{{ post.post_image.url }}"</img>
+					<p  class="text">{{ post.post }}</p>
+
+	        <p class="user_username">
+					<!--	{% if post.user.userprofile.profile_image.url %}-->
+						<img class="post_user_profile_image"
+						src="{{ post.user.userprofile.profile_image.url }}" />
+						<!--{% endif %}-->
+						{{ post.user }}
+					</p>
+					<div class="like">Like</div>
+				<!--	<p class= "post_created_date" > {{ post.created_date }} </p>-->
         </div>
     {% endfor %}
+		<br/>
 </div>
 
 {% endblock %}

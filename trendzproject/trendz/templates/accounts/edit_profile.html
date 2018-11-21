@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="user_info">
 				<h1>Hi, {{ user.first_name | upper}}  {{ user.last_name | upper }}</h1>
-				<p>Edit your profile account here.</p>
+				<p>Edit your Profile details here.</p>
 				<form method="post">
 					{% csrf_token %}
 					{{ form.as_p }}

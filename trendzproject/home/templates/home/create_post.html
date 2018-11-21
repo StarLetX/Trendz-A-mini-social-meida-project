@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+	<title>HOME</title>
+{% endblock %}
+
+{% block float %}
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="container">
+	<div class="self-worth" style="background: white; padding: 10px; border: 2px solid dodgerblue; border-radius: 4px;">
+		<p> Take a snap. Post it! No filters! No edits! </p>
+		<p> You are unique and beautiful and Vlick loves you just that way.</p>
+	</div>
+     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br/>
+        <button class="add_trend"> Add Moment </button>
+    </form>
+</div>
+
+{% endblock %}

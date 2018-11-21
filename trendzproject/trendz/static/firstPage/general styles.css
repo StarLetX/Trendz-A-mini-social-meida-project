@@ -11,7 +11,6 @@ body{
 }
 
 
-
 /*
 ==================================================================================================
 ==================================================================================================
@@ -45,26 +44,42 @@ these rules applies to the main_home.html page
 	 ==================================================================================================
 	 ==================================================================================================
 	*/
-	.user_username {
+	.user_username, .like {
 		color: #fb5b11;
 		padding: 0;
 		margin:0;
 		font-weight: bold;
+		font-size: 16px;
+		font-family: arial;
 	}
 
+
+	.like {
+		 text-align: right;
+		 margin: -20px 10px 0 0;
+		 position: relative;
+		 padding-down: 10px;
+	 }
+
+	.like:hover {
+		 color:blue;
+	 }
+/*
 	.post_created_date {
 		color: grey;
 		font-size: 12px;
 		padding: 0;
 		margin:0;
 	}
+*/
 
 	.post_user_profile_image {
 		border-radius: 50%;
 		width: 30px;
 		height: 30px;
-		margin:10px;
+		margin:5px;
 	}
+
 
 
 	/*
@@ -74,6 +89,7 @@ these rules applies to the main_home.html page
 	 ==================================================================================================
 	 ==================================================================================================
 	*/
+
 	.user_profile_image {
 		border-radius: 50%;
 		border: 10px solid #fb5b11;
@@ -110,3 +126,25 @@ these rules applies to the main_home.html page
 		text-align: center;
 		border-bottom: 3px solid #fb5b11;
 	}
+
+
+.post_model {
+	border: 5px solid #ffffff;
+	position: relative;
+	padding-bottom: 40px;
+}
+
+.post_model img{
+		max-width: 100%;
+}
+
+.post_model p {
+	padding: 0px;
+	margin: 0px;
+}
+
+p.text {
+	padding-left: 5px;
+	font-size: 12px;
+	font-family: arial;
+}

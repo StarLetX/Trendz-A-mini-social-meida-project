@@ -137,12 +137,11 @@ LOGIN_EXEMPT_URLS = (
         r'^$',
         r'^trendz/logout$',
         r'^trendz/register/$',
-        r'^trendz/reset-password/$', 
+        r'^trendz/reset-password/$',
         r'^trendz/reset-password/done/$',
         r'^trendz/reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
-        r'^trendz/reset-password/complete/$'  
+        r'^trendz/reset-password/complete/$'
     )
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
-
