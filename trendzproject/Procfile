@@ -1,0 +1,1 @@
+web: gunicorn trendzproject.wsgi --log-file -

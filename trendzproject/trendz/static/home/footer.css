@@ -11,6 +11,13 @@
 	text-align: center;
 	color: white;
 	text-decoration: none;
-	padding: 5px 16px;
-    font-weight:bold;
-        }
+	padding: 10%;
+	font-weight:bold;
+  }
+
+
+.f-link {
+	line-height: 30px;
+	margin:auto;
+	width: 100vh;
+}

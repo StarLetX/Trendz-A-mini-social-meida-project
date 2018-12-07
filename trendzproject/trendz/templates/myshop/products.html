@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<p> This page list all products created by users </p>
+
+<hr/>
+	<h1> New Deals </h1>
+	<p> <a href="{% url 'myshop:new_product' %}"> Add Item </a> </p>
+<hr/>
+
+{% for item in items %}
+<div class="container">
+	<section class="product-card">
+		<img src="{{ item.image.url }}" />
+		<div class="product-info">
+			<p> {{ item.name }} </p>
+			<h1> {{ item.price_sign }} </h1>
+			<p> {{ item.description }} </p>
+			<button> BUY </button>
+		</div>
+		<hr/>
+		<br/>
+	</section>
+</div>
+{% endfor %}
+
+{% endblock %}

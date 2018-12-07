@@ -4,5 +4,5 @@ from home.views import HomeView, add
 
 urlpatterns = [
 	url(r'^$', HomeView.as_view(), name='HomeView'),
-	url(r'^add/$', add, name="create_post")
+	url(r'^add/$', add, name="create_post"),
 ]
